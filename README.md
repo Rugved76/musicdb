@@ -1,5 +1,5 @@
 # musicdb
 
-Run the app.js file using
-node app
+Run the index.js file using
+node index
 or nodemon
