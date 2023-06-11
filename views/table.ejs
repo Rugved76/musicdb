@@ -40,14 +40,13 @@
     h1 {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: white;
-        text-shadow: 3px 3px 3px rgb(165, 0, 110);
+        text-shadow: 3px 3px 0px rgb(165, 0, 110);
         text-align: center;
     }
 
     .container {
         justify-content: center;
         display: flex;
-        /* flex-direction: column?; */
         margin: auto;
     }
 
@@ -90,7 +89,7 @@
                     <td>
                         <%= item.singer %>
                     </td>
-                    <td>
+                    <td>    
                         <form class="del" method="post" action="/deleteSongs/<%= item._id %>">
                             <button type="submit"><strong>X</strong></button>
                         </form>
