@@ -8,8 +8,6 @@ const PORT = 3000
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-
-
 mongoose.Promise = global.Promise;
 
 mongoose.connect(dbConfig.url, {
@@ -20,7 +18,6 @@ mongoose.connect(dbConfig.url, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-
 
 app.get('/', (req, res) => {
     res.render("index")
@@ -38,7 +35,6 @@ app.post("/addsong", (req, res) => {
         })
 });
 
-
 app.get('/getSongs', (req, res) => {
     console.log(req.query)
     Music.find(req.query).
@@ -48,8 +44,6 @@ app.get('/getSongs', (req, res) => {
             res.json({ "message": err })
         })
 })
-
-
 
 app.post('/deleteSongs/:id', (req, res) => {
     Music.findByIdAndDelete(req.params.id).
@@ -62,6 +56,6 @@ app.post('/deleteSongs/:id', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log("Server is listening on port 3000");
+    console.log(`Server is listening at port : ${PORT}`);
 });
 
