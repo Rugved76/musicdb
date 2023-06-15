@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser'); var app = express()
-const Music = require('./models')
-const dbConfig = require('./config');
+const Music = require('./src/models')
+const dbConfig = require('./src/config');
 const mongoose = require('mongoose');
 const PORT = 3000
 
